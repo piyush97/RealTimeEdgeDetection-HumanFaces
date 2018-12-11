@@ -14,6 +14,6 @@ app.use(express.static(viewsDir))
 // Public directory addn
 app.use(express.static(path.join(__dirname, './public')))
 
-app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'videoFaceTracking.html')))
+app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'index.html')))
 
 app.listen(3000, () => console.log('Listening on port 3000!'));
