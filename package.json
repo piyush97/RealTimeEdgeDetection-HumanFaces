@@ -1,0 +1,23 @@
+{
+  "name": "realtimefacedetection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces.git"
+  },
+  "author": "Piyush Mehta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces/issues"
+  },
+  "homepage": "https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
