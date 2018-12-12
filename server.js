@@ -12,7 +12,12 @@ app.use(express.urlencoded({extended:true}))
 const viewsDir = path.join(__dirname, 'Client')
 app.use(express.static(viewsDir))
 // Public directory addn
+
 app.use(express.static(path.join(__dirname, './public')))
+
+app.use(express.static(path.join(__dirname, './weights')))
+
+app.use(express.static(path.join(__dirname, './dist')))
 
 app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'index.html')))
 
