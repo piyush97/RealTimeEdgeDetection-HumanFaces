@@ -5,14 +5,14 @@
   <script src="js/commons.js"></script>
   <script src="js/drawing.js"></script>
   <script src="js/faceDetectionControls.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
-<body>
-  <div id="navbar"></div>
+<body style="background-color: black">
   <div class="center-content page-container">
-
+  <center>
+    <h1 style="color: grey">Realtime Face Detection</h1>
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
     </div>
@@ -20,8 +20,8 @@
       <video onplay="onPlay(this)" id="inputVideo" autoplay muted></video>
       <canvas id="overlay" />
     </div>
-
-    <div class="row side-by-side">
+  </center>
+    <center>
       <!-- fps_meter -->
       <div id="fps_meter" class="row side-by-side">
         <div>
@@ -29,9 +29,7 @@
           <input disabled value="-" id="fps" type="text" class="bold">
         </div>
       </div>
-      <!-- fps_meter -->
-
-    </div>
+  </center>
     <!-- ssd_mobilenetv1_controls -->
     <span id="ssd_mobilenetv1_controls">
       <div class="row side-by-side">
