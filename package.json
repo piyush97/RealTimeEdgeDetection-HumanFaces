@@ -1,23 +1,74 @@
 {
-  "name": "realtimefacedetection",
+  "name": "realtimeedgeetection-humanfaces",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "JavaScript API for face detection and face recognition in the browser with tensorflow.js",
+  "module": "./build/es6/index.js",
+  "main": "./build/commonjs/index.js",
+  "typings": "./build/commonjs/index.d.ts",
   "scripts": {
-    "start": "node server.js"
+    "rollup-min": "rollup -c rollup.config.js --environment minify:true",
+    "rollup": "rollup -c rollup.config.js",
+    "tsc": "tsc",
+    "tsc-es6": "tsc --p tsconfig.es6.json",
+    "build": "rm -rf ./build && rm -rf ./dist && npm run rollup && npm run rollup-min && npm run tsc && npm run tsc-es6",
+    "test": "karma start",
+    "test-browser": "karma start --single-run",
+    "test-node": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine-node.js",
+    "test-all": "npm run test-browser && npm run test-node",
+    "test-facelandmarknets": "set UUT=faceLandmarkNet&& karma start",
+    "test-facerecognitionnet": "set UUT=faceRecognitionNet&& karma start",
+    "test-ssdmobilenetv1": "set UUT=ssdMobilenetv1&& karma start",
+    "test-tinyfacedetector": "set UUT=tinyFaceDetector&& karma start",
+    "test-mtcnn": "set UUT=mtcnn&& karma start",
+    "test-cpu": "set BACKEND_CPU=true&& karma start",
+    "test-exclude-uncompressed": "set EXCLUDE_UNCOMPRESSED=true&& karma start",
+    "test-node-exclude-uncompressed": "set EXCLUDE_UNCOMPRESSED=true&& ts-node node_modules/jasmine/bin/jasmine --config=jasmine-node.js",
+    "docs": "typedoc --options ./typedoc.config.js ./src"
+  },
+  "keywords": [
+    "face",
+    "detection",
+    "recognition",
+    "tensorflow",
+    "tf"
+  ],
+  "dependencies": {
+    "@tensorflow/tfjs-core": "0.13.8",
+    "tfjs-image-recognition-base": "0.2.0",
+    "tfjs-tiny-yolov2": "0.3.0",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@tensorflow/tfjs-node": "^0.1.19",
+    "@types/jasmine": "^2.8.8",
+    "@types/node": "^10.9.2",
+    "canvas": "^2.0.1",
+    "jasmine": "^3.3.0",
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-typescript": "^3.0.12",
+    "rollup": "^0.65.0",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.16.1",
+    "rollup-plugin-uglify": "^4.0.0",
+    "ts-node": "^7.0.1",
+    "typescript": "2.8.4"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces.git"
   },
-  "author": "Piyush Mehta",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces/issues"
   },
   "homepage": "https://github.com/piyush97/RealTimeEdgeDetection-HumanFaces#readme",
-  "dependencies": {
-    "bootstrap": "^4.1.3",
-    "express": "^4.16.4"
-  }
+  "author": "Piyush Mehta",
+  "license": "ISC"
 }
