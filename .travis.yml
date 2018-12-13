@@ -20,5 +20,4 @@ before_install:
  - sh -e /etc/init.d/xvfb start
 script:
   - if [ $ENV == 'browser' ]; then npm run test-browser; fi
-  - if [ $ENV == 'node' ]; then npm run test-node; fi
   - npm run build
