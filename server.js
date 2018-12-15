@@ -44,3 +44,21 @@ function request(url, returnBuffer = true, timeout = 10000) {
     })
   })
 }
+// Euclidean Distance
+
+// ment to be used for computing the euclidean distance between two face descriptors
+const dist = RealTimeEdgeDetection - HumanFaces.euclideanDistance([0, 0], [0, 10])
+console.log(dist) // 10
+// Retrieve the Face Landmark Points and Contours
+
+const landmarkPositions = landmarks.positions
+
+// or get the positions of individual contours,
+// only available for 68 point face ladnamrks (FaceLandmarks68)
+const jawOutline = landmarks.getJawOutline()
+const nose = landmarks.getNose()
+const mouth = landmarks.getMouth()
+const leftEye = landmarks.getLeftEye()
+const rightEye = landmarks.getRightEye()
+const leftEyeBbrow = landmarks.getLeftEyeBrow()
+const rightEyeBrow = landmarks.getRightEyeBrow()
