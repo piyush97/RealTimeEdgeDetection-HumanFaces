@@ -2,7 +2,8 @@
 
 **JavaScript App for Detecting edges of the human face**
 
-Table of Contents:
+Tech Used:
+TensorFlow.JS
 # Examples
 
 ## Realtime Face Tracking
